@@ -12,7 +12,7 @@ int main()
     vector<int> dp(n);
     dp[0] = 0;
 
-    for(int i = 1; i < n; i++) { // which stone we're on
+    for(int i = 1; i < n; i++) { // which stone?
         dp[i] = INT_MAX; // because we're comparing for min, need dp[i] to be huge first!
         for(int j = 1; j <= k; j++) { // how long should we jump from 1 to k?
             if(i - j >= 0) {
