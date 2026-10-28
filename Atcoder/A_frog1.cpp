@@ -25,14 +25,14 @@ void solve()
         cin >> v[i];
     }
     
-    // make the dp array, n and n+1 both works for this problem
+    // make the dp array, n and n+1 both works
     vector<int> dp(n);
     dp[0] = 0; // first case we already know
     dp[1] = abs(v[1] - v[0]); // second case we already know
     
     // loop to < n because n is the number of elements <- this problem
     // loop to <= if n is the final position
-    FOR(i, 2, n) { 
+    FOR(i, 2, n) { // which stone?
         dp[i] = min(dp[i-1] + abs(v[i] - v[i-1]), 
                     dp[i-2] + abs(v[i] - v[i-2]));
     // to reach i, we can come from point i-1 or i-2
